@@ -1,8 +1,8 @@
 import React from "react";
 
 
-export default function TaskList(props){
+export default function Task(){
     return(
-        <li></li>
+        <li>New Task</li>
     )
 }
