@@ -42,7 +42,7 @@ export default class App extends Component {
         }
   render() {
     return (
-        <div>
+        <div className="app-wrapper">
           <AddTask/>
           <TaskList tasks = { this.state.tasks}/>
         </div>

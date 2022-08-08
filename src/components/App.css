@@ -1,4 +1,8 @@
-.App {
+.app-wrapper {
   text-align: center;
   padding: 15px
+}
+.task-list{
+  list-style: none;
+  padding: 0;
 }
