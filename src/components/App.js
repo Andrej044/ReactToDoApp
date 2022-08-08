@@ -44,7 +44,7 @@ export default class App extends Component {
     return (
         <div>
           <AddTask/>
-          <TaskList/>
+          <TaskList tasks = { this.state.tasks}/>
         </div>
     )
   }
