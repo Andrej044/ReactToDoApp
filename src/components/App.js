@@ -20,7 +20,7 @@ export default class App extends Component {
                     date: "2022-12-25",
                     finishDate: null,
                     important: true,
-                    active: false,
+                    active: true,
                 },
                 {
                     id:2,
@@ -36,7 +36,7 @@ export default class App extends Component {
                     date: "2022-08-19",
                     finishDate: null,
                     important: true,
-                    active: false,
+                    active: true,
                 }
                 ]
         }
@@ -48,10 +48,19 @@ export default class App extends Component {
             this.setState({
                 tasks
             })
-
         }
     changeTaskStatus = (id) => {
              console.log("change status" + id);
+             const tasks = [...this.state.tasks];
+             tasks.forEach(task => {
+                 if(task.id === id) {
+                     task.active = false;
+                     task.finishDate = new Date().getTime();
+                 }
+             })
+            this.setState({
+                tasks
+            })
         }
   render() {
     return (
