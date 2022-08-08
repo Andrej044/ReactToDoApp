@@ -40,11 +40,27 @@ export default class App extends Component {
                 }
                 ]
         }
+        deleteTask = (id) => {
+            console.log("delete" + id);
+            const tasks = this.state.tasks.concat();
+            const index = tasks.findIndex(task => task.id === id);
+            tasks.splice(index,1);
+            this.setState({
+                tasks
+            })
+
+        }
+    changeTaskStatus = (id) => {
+             console.log("change status" + id);
+        }
   render() {
     return (
         <div className="app-wrapper">
           <AddTask/>
-          <TaskList tasks = { this.state.tasks}/>
+          <TaskList
+              tasks = { this.state.tasks}
+              deleteTask = {this.deleteTask}
+              changeTaskStatus = {this.changeTaskStatus}/>
         </div>
     )
   }
