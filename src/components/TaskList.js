@@ -7,21 +7,18 @@ export default function TaskList(props){
     const activeTasks = active.map(task =>
         <Task
             key = {task.id}
-            id = {task.id}
-            text = {task.text}
-            date = {task.date}
+            tasks={task}
             deleteTask = {props.deleteTask}
             changeTaskStatus = {props.changeTaskStatus}
         />)
     const doneTasks = done.map(task =>
         <Task
             key = {task.id}
-            id = {task.id}
-            text = {task.text}
-            date = {task.date}
+            tasks={task}
             deleteTask = {props.deleteTask}
             changeTaskStatus = {props.changeTaskStatus}
         />)
+
 
     return(
         <div className="tasks-wrapper">
