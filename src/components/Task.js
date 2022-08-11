@@ -13,7 +13,8 @@ export default function Task(props){
             <li className="task-list__task">
                <h3 className="task-list__title">Zadanie</h3>
                 <p className="task-list__content">
-                    {important? <span className="task-list__text" style={style}>{text}</span> : text} - do <span> {date} </span>
+                    {important? <span className="task-list__text" style={style}>{text}</span> : <span className="task-list__text">{text}</span>}
+                    <span className="task-list__date">  - do { date} </span>
                     <span className="task-list__buttons">
                         {active ? <button className="btn" onClick={props.changeTaskStatus.bind(this,id)}>Zostało zrobione</button> : null}
                         <button className="btn" onClick={props.deleteTask.bind(this,id)}>X</button>
