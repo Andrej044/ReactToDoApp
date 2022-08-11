@@ -8,16 +8,16 @@ export default function Task(props){
         fontWeight:"bold"
     }
     const {text, active, id, date, important, finishDate} = props.tasks;
-    console.log(props.tasks)
-
     if(active) {
         return(
             <li className="task-list__task">
                <h3 className="task-list__title">Zadanie {id}</h3>
                 <p className="task-list__content">
-                    {important? <span style={style}>{text}</span> : text} - do <span>{date}</span>
-                    {active ? <button onClick={props.changeTaskStatus.bind(this,id)}>Zostało zrobione</button> : null}
-                    <button onClick={props.deleteTask.bind(this,id)}>X</button>
+                    {important? <span className="task-list__text" style={style}>{text}</span> : text} - do <span>{date}</span>
+                    <div className="task-list__buttons">
+                        {active ? <button className="btn" onClick={props.changeTaskStatus.bind(this,id)}>Zostało zrobione</button> : null}
+                        <button className="btn" onClick={props.deleteTask.bind(this,id)}>X</button>
+                    </div>
                 </p>
             </li>
         )
@@ -31,10 +31,9 @@ export default function Task(props){
                    <strong>{text}</strong> - do <span>{date}</span>
                     <br/>
                     - potwierdzenie wykonania <span>{doneDate}</span>
-                    <button onClick={props.deleteTask.bind(this,id)}>X</button>
+                    <button className="btn" onClick={props.deleteTask.bind(this,id)}>X</button>
                 </p>
             </li>
         )
     }
-
 }
