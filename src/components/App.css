@@ -4,10 +4,26 @@
   text-align: center;
   padding: 15px;
 }
+.task-list-wrapper{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
 .task-list__list{
+  width: 80%;
   list-style: none;
   padding: 0;
 }
+
+.task-list__content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn{
   padding: 5px 10px;
   background-color: white;
@@ -20,5 +36,5 @@
 .btn:hover {
   color: white;
   background-color: black;
-  box-shadow: 0 0 10px 2px darkorange;
+  box-shadow: 0 0 10px 2px lightgray;
 }
