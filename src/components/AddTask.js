@@ -1,9 +1,17 @@
 import React,{Component} from "react";
 import "./AddTask.css"
 export default class AddTask extends Component{
+    minDate = new Date().toISOString().slice(0,4) * 1 - 1 + "-01-01";
+    maxDate = new Date().toISOString().slice(0,4) * 1 + 1 + "-12-31";
     state={
         text:"",
-        checked: true, 
+        checked: false,
+        date: new Date().toISOString().slice(0, 10)
+    }
+    handleDate = (e) => {
+        this.setState({
+            date: e.target.value
+        })
     }
     render() {
         return(
@@ -20,7 +28,14 @@ export default class AddTask extends Component{
                        </p>
                         <p className="addTask__input addTask__date">
                             <label htmlFor="date">Do kiedy zrobić</label>
-                            <input type="date" id="date" value="2022-08-10" min="2022-01-01" max="2023-12-31"/>
+                            <input
+                                type="date"
+                                id="date"
+                                value={this.state.date}
+                                min={this.minDate}
+                                max={this.maxDate}
+                                onChange={this.handleDate}
+                            />
                         </p>
                         <button className="addTask__button btn">Dodaj</button>
                     </section>
