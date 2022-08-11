@@ -1,8 +1,24 @@
 .app-wrapper {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  padding: 15px
+  padding: 15px;
 }
-.task-list{
+.task-list__list{
   list-style: none;
   padding: 0;
+}
+.btn{
+  padding: 5px 10px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition:background-color 0.2s linear;
+  box-shadow: 0 0 0 0 white;
+  text-transform: uppercase;
+}
+.btn:hover {
+  color: white;
+  background-color: black;
+  box-shadow: 0 0 10px 2px darkorange;
 }

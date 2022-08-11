@@ -1,0 +1,28 @@
+.addTask-form{
+    width: 100%;
+}
+.addTask-section{
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 10px;
+}
+.addTask__title{
+    padding: 5px;
+    margin: 0;
+}
+.addTask__input{
+    width: 50%;
+    margin: 0 auto;
+}
+input{
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+.addTask__date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
