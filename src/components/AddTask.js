@@ -13,6 +13,27 @@ export default class AddTask extends Component{
             date: e.target.value
         })
     }
+    handleText = (e) => {
+        this.setState({
+            text: e.target.value
+        })
+    }
+    handleCheck = (e) => {
+            this.setState({
+                checked: e.target.checked
+            })
+    }
+    handleClick = (e) => {
+        e.preventDefault();
+        const {text, date, checked} = this.state;
+        const add = this.props.add(text, date, checked);
+        if(add){
+            this.setState({
+                text:"",
+                checked: false
+            })
+        }
+    }
     render() {
         return(
             <div className="addTask">
@@ -20,10 +41,21 @@ export default class AddTask extends Component{
                     <section className="addTask-section">
                         <h2 className="addTask__title">Dodaj zadanie i wybierz datę do kiedy zrobić.</h2>
                         <p className="addTask__input">
-                            <input id="inputTask" type="text" placeholder="dodaj zadanie" value={this.state.text}/>
+                            <input
+                                id="inputTask"
+                                type="text"
+                                placeholder="dodaj zadanie"
+                                value={this.state.text}
+                                onChange={this.handleText}
+                            />
                         </p>
                        <p className="addTask__input addTask__priority">
-                            <input  type="checkbox" id="important" checked={this.state.checked}/>
+                            <input
+                                type="checkbox"
+                                id="important"
+                                checked={this.state.checked}
+                                onChange={this.handleCheck}
+                            />
                             <label htmlFor="important">Priorytet</label>
                        </p>
                         <p className="addTask__input addTask__date">
@@ -37,7 +69,7 @@ export default class AddTask extends Component{
                                 onChange={this.handleDate}
                             />
                         </p>
-                        <button className="addTask__button btn">Dodaj</button>
+                        <button className="addTask__button btn" onClick={this.handleClick}>Dodaj</button>
                     </section>
                 </form>
             </div>
